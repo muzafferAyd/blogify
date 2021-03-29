@@ -12,7 +12,10 @@ app.use(cors());
 
 
 app.get("/", (req, res) =>{
-    res.send("Coding with me");
+    res.json({
+        author : "Coding with muzaffer" ,
+        message : "Mutlu yıllar",
+    });
 });
 
 const PORT = process.env.PORT || 5000;
