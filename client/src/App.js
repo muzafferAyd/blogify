@@ -10,8 +10,11 @@ import {
   Button,
   IconButton,
   CssBaseline,
+  Switch,
  } from "@material-ui/core";
 import PenIcon from "@material-ui/icons/Create";
+import {BrowserRouter as Router, Route, Redirect} from "react-router-dom"
+import PostsList from "./components/PostsList"
 
  const useStyles = makeStyles((theme) =>({
    root: {
@@ -49,6 +52,22 @@ const App = () => {
           </Toolbar>
 
         </AppBar>
+
+        <Grid container className={classes.container}>
+          <Grid item xs={12} > 
+          <Router>
+            <Switch>
+               <Route exact path="/posts" component={PostsList}/>
+               <Route exact path="/posts" component={PostsList}/>
+            </Switch>
+
+
+          <Redirect from="/" to="/posts">
+
+          </Redirect>
+          </Router>
+          </Grid>
+        </Grid>
       </Container>
 
     </>
